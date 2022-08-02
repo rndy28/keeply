@@ -326,7 +326,7 @@ const NoteFormModal = (data: NoteWithLabelsIncluded) => {
               </Flex>
             )}
             {note.time && (
-              <Label css="border: 1px solid red;">
+              <Label>
                 {formatDate(note.time, undefined, {
                   month: "short",
                   day: "numeric",
