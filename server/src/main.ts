@@ -1,19 +1,19 @@
+import "dotenv/config";
+import "reflect-metadata";
 import { PrismaClient } from "@prisma/client";
 import { Agenda } from "agenda";
 import {
   ApolloServerPluginDrainHttpServer,
-  ApolloServerPluginLandingPageGraphQLPlayground
+  ApolloServerPluginLandingPageGraphQLPlayground,
 } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
 import MongoStore from "connect-mongo";
 import cors from "cors";
-import "dotenv/config";
 import express, { Request } from "express";
 import session from "express-session";
 import { useServer } from "graphql-ws/lib/use/ws";
 import { createServer } from "http";
 import { MongoClient } from "mongodb";
-import "reflect-metadata";
 import { buildSchema } from "type-graphql";
 import { WebSocketServer } from "ws";
 import { COOKIE_NAME, PORT, __prod__ } from "./constants";
