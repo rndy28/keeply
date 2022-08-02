@@ -1,0 +1,56 @@
+{
+  "name": "keeply",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "concurrently \"ts-node-dev --respawn --transpile-only src/main.ts\" \"cd ../client && yarn dev\"",
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "logs": "heroku logs --tail --app keeply",
+    "prisma:migrate": "yarn prisma migrate dev",
+    "prisma:studio": "yarn prisma studio",
+    "prisma:generate": "yarn prisma generate",
+    "prisma:reset": "yarn prisma migrate reset"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.15.2",
+    "agenda": "^4.3.0",
+    "apollo-server-core": "^3.9.0",
+    "apollo-server-express": "^3.9.0",
+    "argon2": "^0.28.5",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "google-auth-library": "^8.0.3",
+    "graphql": "15.7.2",
+    "graphql-ws": "^5.9.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.7.0",
+    "nodemailer": "^6.7.5",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/agenda": "^4.1.0",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^18.0.0",
+    "@types/nodemailer": "^6.4.4",
+    "@types/uuid": "^8.3.4",
+    "@types/ws": "^8.5.3",
+    "concurrently": "^7.3.0",
+    "prettier": "^2.7.1",
+    "prisma": "^4.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.3"
+  },
+  "license": "MIT"
+}

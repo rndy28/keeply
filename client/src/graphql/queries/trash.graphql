@@ -1,0 +1,5 @@
+query Trash {
+  trash {
+    ...NoteInput
+  }
+}

@@ -1,0 +1,3 @@
+mutation MoveNoteToTrash($noteId: Float!) {
+  moveNoteToTrash(noteId: $noteId)
+}

@@ -1,0 +1,5 @@
+mutation EditLabel($labelId: Float!, $name: String!) {
+  editLabel(labelId: $labelId, name: $name) {
+    ...RegularLabel
+  }
+}

@@ -1,0 +1,5 @@
+query Notes($reminder: Boolean) {
+  notes(reminder: $reminder) {
+    ...NoteInput
+  }
+}
