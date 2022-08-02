@@ -1,8 +1,17 @@
 # Keeply
-## Manage your notes with ease
+![](screenshot/screely-1659436349214.png)
+## Manage your notes with ease 🗿
 
+<br>
 
-## Roadmap
+## Built with ✨
+- [ReactJS](https://reactjs.org/)
+- [URQL](https://formidable.com/open-source/urql/)
+- [Styled Components](https://styled-components.com/)
+- [Graphql](https://graphql.org/)
+- [ExpressJS](https://expressjs.com/)
+
+## Todos 🚀
 - [x] Sign In 
 - [x] Sign up
 - [x] Sign In via google
@@ -12,10 +21,6 @@
 - [x] Search label
 - [x] Search Note
 - [x] Archiving note
-- [ ] Reminder
+- [x] Trash 
+- [x] Reminder
 - [ ] Filter by label
-
-
-client get token -> send token to backend -> backend get token -> call sendNotifClient -> return string
-
-get all note with reminder -> loop over -> get nearest time to actual time -> schedule to run -> run
