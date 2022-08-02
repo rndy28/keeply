@@ -5,7 +5,7 @@
     "dev": "concurrently \"ts-node-dev --respawn --transpile-only src/main.ts\" \"cd ../client && yarn dev\"",
     "start": "node dist/main.js",
     "build": "tsc",
-    "logs": "heroku logs --tail --app keeply",
+    "logs": "heroku logs --tail --app keeply-server",
     "prisma:migrate": "yarn prisma migrate dev",
     "prisma:studio": "yarn prisma studio",
     "prisma:generate": "yarn prisma generate",
