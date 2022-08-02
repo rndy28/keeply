@@ -17,7 +17,6 @@ const SignIn = lazy(() => import("pages/auth/signin"));
 const SignUp = lazy(() => import("pages/auth/signup"));
 const ChangePassword = lazy(() => import("pages/auth/changePassword"));
 const ForgotPassword = lazy(() => import("pages/auth/forgotPassword"));
-const FourOFour = lazy(() => import("pages/404"));
 
 const App = () => {
   return (
@@ -80,7 +79,6 @@ const App = () => {
               <Route path="/change-password/:token" element={<PublicRoute />}>
                 <Route path="/change-password/:token" element={<ChangePassword />} />
               </Route>
-              <Route path="*" element={<FourOFour />} />
             </Routes>
           </Suspense>
         </ThemeProvider>
