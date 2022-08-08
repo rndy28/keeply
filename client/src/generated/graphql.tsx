@@ -153,11 +153,6 @@ export type Query = {
   labels: Array<Label>;
   me?: Maybe<User>;
   notes: Array<Note>;
-  trash: Array<Note>;
-};
-
-export type QueryNotesArgs = {
-  reminder?: InputMaybe<Scalars["Boolean"]>;
 };
 
 export type Subscription = {
@@ -433,33 +428,11 @@ export type MeQuery = {
   } | null;
 };
 
-export type NotesQueryVariables = Exact<{
-  reminder?: InputMaybe<Scalars["Boolean"]>;
-}>;
+export type NotesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type NotesQuery = {
   __typename?: "Query";
   notes: Array<{
-    __typename?: "Note";
-    id: string;
-    title: string;
-    text: string;
-    archived?: boolean | null;
-    pinned?: boolean | null;
-    indexColor?: number | null;
-    time?: string | null;
-    trashed?: boolean | null;
-    createdAt: any;
-    updatedAt: any;
-    labels?: Array<{ __typename?: "Label"; id: string; name: string }> | null;
-  }>;
-};
-
-export type TrashQueryVariables = Exact<{ [key: string]: never }>;
-
-export type TrashQuery = {
-  __typename?: "Query";
-  trash: Array<{
     __typename?: "Note";
     id: string;
     title: string;
@@ -741,8 +714,8 @@ export function useMeQuery(options?: Omit<Urql.UseQueryArgs<MeQueryVariables>, "
   return Urql.useQuery<MeQuery>({ query: MeDocument, ...options });
 }
 export const NotesDocument = gql`
-  query Notes($reminder: Boolean) {
-    notes(reminder: $reminder) {
+  query Notes {
+    notes {
       ...NoteInput
     }
   }
@@ -751,18 +724,6 @@ export const NotesDocument = gql`
 
 export function useNotesQuery(options?: Omit<Urql.UseQueryArgs<NotesQueryVariables>, "query">) {
   return Urql.useQuery<NotesQuery>({ query: NotesDocument, ...options });
-}
-export const TrashDocument = gql`
-  query Trash {
-    trash {
-      ...NoteInput
-    }
-  }
-  ${NoteInputFragmentDoc}
-`;
-
-export function useTrashQuery(options?: Omit<Urql.UseQueryArgs<TrashQueryVariables>, "query">) {
-  return Urql.useQuery<TrashQuery>({ query: TrashDocument, ...options });
 }
 export const ReminderDocument = gql`
   subscription Reminder {

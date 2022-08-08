@@ -27,9 +27,11 @@ const Notes = ({ notes }: Props) => {
 
   const queriedNotes = notes.filter(
     (note) =>
+      (location.pathname.includes("/reminders") ? note.time : !note.time) &&
       (note.title.toLowerCase().includes(query.toLowerCase()) ||
         note.text.toLowerCase().includes(query.toLowerCase())) &&
-      !note.archived
+      !note.archived &&
+      !note.trashed
   );
 
   const pinned = queriedNotes.filter((note) => note.pinned);

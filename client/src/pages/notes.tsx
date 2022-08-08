@@ -13,11 +13,7 @@ const Notes = () => {
 
   const [{ data: reminderData, fetching: fetchingReminder }] = useReminderSubscription();
 
-  const [{ data }] = useNotesQuery({
-    variables: {
-      reminder: location.pathname.includes("reminders") ? true : undefined,
-    },
-  });
+  const [{ data }] = useNotesQuery();
   const { onModalOpen } = useModal();
 
   useEffect(() => {

@@ -26,7 +26,8 @@ const Archived = ({ notes }: Props) => {
     (note) =>
       (note.title.toLowerCase().includes(query.toLowerCase()) ||
         note.text.toLowerCase().includes(query.toLowerCase())) &&
-      note.archived
+      note.archived &&
+      !note.trashed
   );
 
   const archived = queriedNotes.filter((note) => !note.pinned);

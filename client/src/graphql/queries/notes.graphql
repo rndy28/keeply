@@ -1,5 +1,5 @@
-query Notes($reminder: Boolean) {
-  notes(reminder: $reminder) {
+query Notes {
+  notes {
     ...NoteInput
   }
 }
