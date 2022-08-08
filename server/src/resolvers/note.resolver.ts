@@ -222,19 +222,10 @@ export class NoteResolver {
 
   @Query(() => [Note])
   @UseMiddleware(isAuth)
-  async notes(
-    @Arg("reminder", () => Boolean, { nullable: true }) reminder: boolean | undefined,
-    @Ctx() { prisma, req }: Context
-  ): Promise<Note[]> {
+  async notes(@Ctx() { prisma, req }: Context): Promise<Note[]> {
     const notes = await prisma.note.findMany({
       where: {
         userId: req.session.userId!,
-        time: reminder ? { not: { equals: null } } : null,
-        AND: {
-          trashed: {
-            equals: false,
-          },
-        },
       },
       orderBy: [
         {
@@ -247,36 +238,6 @@ export class NoteResolver {
     });
 
     return notes;
-  }
-
-  @Query(() => [Note])
-  async trash(@Ctx() { prisma, req }: Context): Promise<Note[]> {
-    const trashed = await prisma.note.findMany({
-      where: {
-        userId: req.session.userId!,
-        AND: {
-          trashed: {
-            equals: true,
-          },
-          archived: {
-            equals: false,
-          },
-          pinned: {
-            equals: false,
-          },
-        },
-      },
-      orderBy: [
-        {
-          createdAt: "desc",
-        },
-      ],
-      include: {
-        labels: true,
-      },
-    });
-
-    return trashed;
   }
 
   @Subscription(() => NotificationPayload, {
