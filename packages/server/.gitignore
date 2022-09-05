@@ -1,0 +1,7 @@
+node_modules
+dist
+**/migrations
+.env
+yarn-debug.log*
+yarn-error.log*
+

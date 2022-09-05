@@ -1,0 +1,45 @@
+{
+  "name": "keeply",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "server:build": "yarn workspace @keeply/server build",
+    "server:dev": "yarn workspace @keeply/server dev",
+    "server:start": "yarn workspace @keeply/server start",
+    "web:build": "yarn workspace @keeply/web build",
+    "web:dev": "yarn workspace @keeply/web dev",
+    "app:android:dev": "yarn workspace @keeply/app android --localhost",
+    "app:ios:dev": "yarn workspace @keeply/app ios",
+    "dev": "concurrently \"yarn server:dev\" \"yarn web:dev\"",
+    "lint": "eslint --ext \".js,.ts,.tsx\" --ignore-path .gitignore . && manypkg check",
+    "lint:fix": "yarn lint --fix && manypkg fix",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write .",
+    "prisma:migrate": "yarn prisma migrate dev",
+    "prisma:studio": "yarn prisma studio",
+    "prisma:generate": "yarn prisma generate",
+    "prisma:reset": "yarn prisma migrate reset"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/rndy28/keeply.git",
+  "author": "rndy28 <rendyramadhan838@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@changesets/cli": "^2.24.4",
+    "@manypkg/cli": "^0.19.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "concurrently": "^7.3.0",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "graphql": "15.7.2",
+    "graphql-ws": "^5.10.1",
+    "prettier": "^2.7.1"
+  }
+}

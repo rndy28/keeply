@@ -1,0 +1,47 @@
+{
+  "name": "@keeply/server",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "start": "node dist/main.js",
+    "build": "tsc"
+  },
+  "prisma": {
+    "schema": "./src/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.15.2",
+    "agenda": "^4.3.0",
+    "apollo-server-core": "^3.10.2",
+    "apollo-server-express": "^3.10.2",
+    "argon2": "^0.28.5",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "google-auth-library": "^8.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.7.0",
+    "nodemailer": "^6.7.5",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^18.0.0",
+    "@types/nodemailer": "^6.4.4",
+    "@types/uuid": "^8.3.4",
+    "@types/ws": "^8.5.3",
+    "eslint": "^8.0.1",
+    "prisma": "^4.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "*"
+  },
+  "license": "MIT"
+}
