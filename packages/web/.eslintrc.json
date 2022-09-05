@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "globals": {
+    "cy": "readonly"
+  },
+  "plugins": ["react"],
+  "extends": ["../../.eslintrc.json", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["*.config.ts"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off"
+  }
+}
