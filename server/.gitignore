@@ -1,9 +1,0 @@
-node_modules
-.env
-yarn-debug.log*
-yarn-error.log*
-
-
-keeply-ef88e-firebase-adminsdk-9r85z-94e13ebf5a.json
-
-dist
