@@ -36,7 +36,7 @@ import { UserResolver } from "./resolvers/user.resolver";
     const mongoDB = mongoClient.db(process.env.MONGO_DB_NAME);
     const agenda = new Agenda({
       db: {
-        address: __prod__ ? process.env.MONGO_URI : process.env.MONGO_URI + process.env.MONGO_DB_NAME,
+        address: __prod__ ? process.env.MONGO_URI :`${process.env.MONGO_URI}/${process.env.MONGO_DB_NAME}`,
         collection: "agendaJobs",
       },
     });

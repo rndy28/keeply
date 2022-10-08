@@ -18,7 +18,9 @@
     "prisma:migrate": "yarn prisma migrate dev",
     "prisma:studio": "yarn prisma studio",
     "prisma:generate": "yarn prisma generate",
-    "prisma:reset": "yarn prisma migrate reset"
+    "prisma:reset": "yarn prisma migrate reset",
+    "db:up": "docker compose up -d",
+    "db:nuke": "docker compose down --volumes --remove-orphans"
   },
   "workspaces": [
     "packages/*"
