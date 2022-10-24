@@ -39,7 +39,8 @@ const sm = css`
 const md = css`
   height: 2.5rem;
   max-width: 10rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  padding-top: 3px;
 `;
 
 const lg = css`
@@ -129,11 +130,16 @@ interface PropsLink extends React.ComponentPropsWithoutRef<"a">, StyledButtonPro
 }
 
 const Button = forwardRef<unknown, Props | PropsLink>(({ children, loading, size, ...props }, ref) => {
-  return "asLink" in props ? (
-    <ContainerLink {...props} ref={ref as React.ForwardedRef<HTMLAnchorElement>} size={size}>
-      {loading ? <ButtonLoader size={size} /> : children}
-    </ContainerLink>
-  ) : (
+  if ("asLink" in props) {
+    const { asLink, ...rest } = props;
+    return (
+      <ContainerLink {...rest} ref={ref as React.ForwardedRef<HTMLAnchorElement>} size={size}>
+        {loading ? <ButtonLoader size={size} /> : children}
+      </ContainerLink>
+    );
+  }
+
+  return (
     <Container {...props} ref={ref as React.ForwardedRef<HTMLButtonElement>} size={size}>
       {loading ? <ButtonLoader size={size} /> : children}
     </Container>

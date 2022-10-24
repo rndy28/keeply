@@ -3,6 +3,7 @@ import Sidebar from "components/UI/organism/Sidebar";
 import { SearchProvider } from "libs/contexts/SearchContext";
 import { useSidebar } from "libs/contexts/SidebarContext";
 import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
 
 const Container = styled.div<{ isSidebarExpanded: boolean }>`
   @media (min-width: 800px) {
@@ -19,16 +20,22 @@ const Layout = ({ children }: Props) => {
   const { expanded } = useSidebar();
 
   return (
-    <Container isSidebarExpanded={expanded}>
-      <div></div>
-      <Sidebar />
-      <main>
-        <SearchProvider>
-          <Header />
-          {children}
-        </SearchProvider>
-      </main>
-    </Container>
+    <>
+      <Helmet>
+        <meta property="og:title" content="keeply note app" />
+        <meta property="og:description" content="keeply is a note taking app like google keep" />
+      </Helmet>
+      <Container isSidebarExpanded={expanded}>
+        <div></div>
+        <Sidebar />
+        <main>
+          <SearchProvider>
+            <Header />
+            {children}
+          </SearchProvider>
+        </main>
+      </Container>
+    </>
   );
 };
 

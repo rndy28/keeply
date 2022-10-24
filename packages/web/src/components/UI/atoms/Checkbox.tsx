@@ -14,6 +14,15 @@ const Checkmark = styled.span`
     content: "";
     position: absolute;
     display: none;
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #eceff4;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 `;
 
@@ -41,17 +50,6 @@ const Container = styled.label`
   user-select: none;
   height: 20px;
   width: 20px;
-  & ${Checkmark}::after {
-    left: 7px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid #eceff4;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
 `;
 
 interface Props extends React.ComponentPropsWithoutRef<"input"> {}
