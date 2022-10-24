@@ -1,6 +1,6 @@
 {
   "name": "@keeply/server",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "start": "node dist/main.js",
