@@ -1817,9 +1817,9 @@
     "@types/node" "*"
 
 "@types/google-one-tap@^1.2.0":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/google-one-tap/-/google-one-tap-1.2.1.tgz#3b5937a3ff7104fdb9890b08ac9fecd724e867ef"
-  integrity sha512-TmpXCXTkcbk9jWOq+Vig+80ebr/uou6aFX2hVDfBhHBKZut8NEmFdEY/wk+BFwv311Mhk82RjK/adiVMvj8Acg==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@types/google-one-tap/-/google-one-tap-1.2.2.tgz#366d7252e867fbbac440eefd7482ab547d6f99be"
+  integrity sha512-7uAOjukbJnzJ5P8fKPSy7QDrbLbCEyUrSH/M4K+8wnk+cbSxE3t2MmrLPX7ejUl8rDZv3oUl0/uwQRlIIrLMBA==
 
 "@types/google.accounts@^0.0.2":
   version "0.0.2"
