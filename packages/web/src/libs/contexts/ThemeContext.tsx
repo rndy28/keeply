@@ -5,20 +5,19 @@ import { dark, light } from "styles/theme";
 
 const [useChangeTheme, Provider] = createCtx<() => void>();
 
+export type Theme = "light" | "dark";
+
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<Theme>(() => localStorage.getItem("preferredTheme") as Theme);
 
   const changeTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }, []);
+    localStorage.setItem("preferredTheme", theme);
+  }, [theme]);
+
   return (
     <Provider value={changeTheme}>
       <StyledComponentProvider theme={theme === "light" ? light : dark}>{children}</StyledComponentProvider>

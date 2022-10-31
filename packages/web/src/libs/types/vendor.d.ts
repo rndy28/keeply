@@ -1,4 +1,5 @@
 import "styled-components";
+import type { Theme } from "libs/contexts/ThemeContext";
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -13,6 +14,6 @@ declare module "styled-components" {
     colorLabelBackground: string;
     borderRadius: string;
     boxShadow: string;
-    state: "light" | "dark";
+    state: Theme;
   }
 }
