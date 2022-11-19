@@ -36,4 +36,3 @@ export const Flex = styled.div<Partial<IFlex>>`
   flex-wrap: ${(p) => p.flexWrap};
   flex: ${(p) => p.flex};
 `;
-1
