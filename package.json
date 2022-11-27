@@ -21,7 +21,7 @@
     "db:nuke": "docker compose down --volumes --remove-orphans"
   },
   "workspaces": [
-    "packages/*"
+    "apps/*"
   ],
   "repository": "https://github.com/rndy28/keeply",
   "author": "rndy28 <rendyramadhan838@gmail.com>",
