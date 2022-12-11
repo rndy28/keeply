@@ -1,5 +1,5 @@
 import Layout from "components/templates/Layout";
-import { useClearTrashMutation, useNotesQuery } from "generated/graphql";
+import { useClearTrashMutation, useNotesQuery } from "@keeply/api";
 import TrashList from "components/UI/organism/list/Trash";
 import { INote } from "libs/types";
 import { Button } from "components/UI/atoms";

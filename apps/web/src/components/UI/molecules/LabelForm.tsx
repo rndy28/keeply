@@ -1,7 +1,7 @@
 import { IconCirclePlus, IconSearch } from "@tabler/icons";
 import { Checkbox, Input, InputLabel, Loader } from "components/UI/atoms";
 import { motion } from "framer-motion";
-import { useCreateLabelMutation, useLabelsQuery } from "generated/graphql";
+import { useCreateLabelMutation, useLabelsQuery } from "@keeply/api";
 import { shortVariant } from "libs/animation";
 import type { LabelT } from "libs/types";
 import React, { useCallback, useEffect, useState } from "react";

@@ -23,7 +23,7 @@ import {
   SigninFromGoogleMutation,
   SigninMutation,
   SignupMutation,
-} from "generated/graphql";
+} from "@keeply/api";
 
 import { betterUpdateQuery } from "libs/utils/betterUpdateQuery";
 import { invalidateQuery } from "libs/utils/invalidateCache";

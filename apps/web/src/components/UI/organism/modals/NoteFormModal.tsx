@@ -7,7 +7,7 @@ import LabelForm from "components/UI/molecules/LabelForm";
 import Palette from "components/UI/molecules/Palette";
 import TextBox from "components/UI/molecules/TextBox";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCreateNoteMutation, useEditNoteMutation } from "generated/graphql";
+import { useCreateNoteMutation, useEditNoteMutation } from "@keeply/api";
 import { formVariant } from "libs/animation";
 import { DARK_COLORS, LIGHT_COLOR } from "libs/constants/colors";
 import { useModal } from "libs/contexts/ModalContext";

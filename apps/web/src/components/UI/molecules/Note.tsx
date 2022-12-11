@@ -8,7 +8,7 @@ import {
   useEditNoteMutation,
   useRestoreNoteFromTrashMutation,
   useDeleteNoteForeverMutation,
-} from "generated/graphql";
+} from "@keeply/api";
 import { DARK_COLORS, LIGHT_COLOR } from "libs/constants/colors";
 import { useModal } from "libs/contexts/ModalContext";
 import { useTheme } from "libs/contexts/ThemeContext";

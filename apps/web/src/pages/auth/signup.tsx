@@ -1,14 +1,14 @@
+import { useSigninFromGoogleMutation, useSignupMutation } from "@keeply/api";
 import { IconEye, IconEyeOff } from "@tabler/icons";
-import { Button, InputError, Input, InputLabel } from "components/UI/atoms";
+import { Button, Input, InputError, InputLabel } from "components/UI/atoms";
 import { EMAIL_REGEX } from "libs/constants/regexEmail";
+import { useTheme } from "libs/contexts/ThemeContext";
 import { useChangePasswordType } from "libs/hooks/useChangePasswordType";
 import { useGoogleSignIn } from "libs/hooks/useGoogleSignIn";
+import type { IUser } from "libs/types";
 import { Container, Form, Group, Illustration, Or, Redirect, Title } from "pages/auth/style";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import type { IUser } from "libs/types";
-import { useSignupMutation, useSigninFromGoogleMutation } from "generated/graphql";
-import { useTheme } from "libs/contexts/ThemeContext";
 
 const SignUp = () => {
   const {

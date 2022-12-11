@@ -1,6 +1,6 @@
 import { Greeting, Hamburger, Profile, SwitchTheme } from "components/UI/atoms";
 import { Flex } from "components/UI/atoms/shared";
-import { useMeQuery } from "generated/graphql";
+import { useMeQuery } from "@keeply/api";
 import { useSidebar } from "libs/contexts/SidebarContext";
 import { useChangeTheme } from "libs/contexts/ThemeContext";
 

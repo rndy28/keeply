@@ -2,7 +2,7 @@ import { Button, Input, InputError, InputLabel } from "components/UI/atoms";
 import { EMAIL_REGEX } from "libs/constants/regexEmail";
 import type { IUser } from "libs/types";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useForgotPasswordMutation } from "generated/graphql";
+import { useForgotPasswordMutation } from "@keeply/api";
 import { Form, Group } from "./style";
 import { useState } from "react";
 

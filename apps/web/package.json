@@ -17,7 +17,10 @@
   "dependencies": {
     "@tabler/icons": "^1.70.0",
     "@urql/exchange-graphcache": "^5.0.1",
+    "@keeply/api": "*",
     "framer-motion": "^6.3.11",
+    "graphql": "15.7.2",
+    "graphql-ws": "^5.10.1",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.1",
     "react": "^18.0.0",
@@ -52,7 +55,7 @@
     "cypress": "^10.3.0",
     "eslint": "^8.0.1",
     "eslint-plugin-react": "^7.31.6",
-    "typescript": "*",
+    "typescript": "^4.8.3",
     "vite": "^3.0.0"
   },
   "license": "MIT"

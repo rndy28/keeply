@@ -1,6 +1,6 @@
 import { IconEye, IconEyeOff } from "@tabler/icons";
 import { Button, Input, InputError, InputLabel } from "components/UI/atoms";
-import { useSigninFromGoogleMutation, useSigninMutation } from "generated/graphql";
+import { useSigninFromGoogleMutation, useSigninMutation } from "@keeply/api";
 import { EMAIL_REGEX } from "libs/constants/regexEmail";
 import { useTheme } from "libs/contexts/ThemeContext";
 import { useChangePasswordType } from "libs/hooks/useChangePasswordType";

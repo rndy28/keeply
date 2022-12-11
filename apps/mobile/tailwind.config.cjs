@@ -14,10 +14,6 @@ module.exports = {
       "2xl": "1536px",
     },
     extend: {
-      fontFamily: {
-        // eslint-disable-next-line quotes
-        quicksand: ['"Quicksand"', "sans-seriff"],
-      },
       height: {
         inherit: "inherit",
       },

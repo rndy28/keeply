@@ -1,7 +1,7 @@
 import { IconArchive, IconCalendarTime, IconLogout, IconNotes, IconPencil, IconTrash } from "@tabler/icons";
 import { Close, Logo } from "components/UI/atoms";
 import { Flex } from "components/UI/atoms/shared";
-import { useLogoutMutation } from "generated/graphql";
+import { useLogoutMutation } from "@keeply/api";
 import { useModal } from "libs/contexts/ModalContext";
 import { useSidebar } from "libs/contexts/SidebarContext";
 import { NavLink, useNavigate } from "react-router-dom";

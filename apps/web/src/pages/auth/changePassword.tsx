@@ -1,6 +1,6 @@
 import { IconEye, IconEyeOff } from "@tabler/icons";
 import { Button, Input, InputError, InputLabel } from "components/UI/atoms";
-import { useChangePasswordMutation } from "generated/graphql";
+import { useChangePasswordMutation } from "@keeply/api";
 import { useChangePasswordType } from "libs/hooks/useChangePasswordType";
 import type { IUser } from "libs/types";
 import { useRef, useState } from "react";

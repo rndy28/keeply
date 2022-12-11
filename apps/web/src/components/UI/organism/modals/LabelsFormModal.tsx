@@ -4,12 +4,7 @@ import { Button, Input, InputLabel, Loader } from "components/UI/atoms";
 import { Flex } from "components/UI/atoms/shared";
 import WarningModal from "components/UI/organism/modals/WarningModal";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  useCreateLabelMutation,
-  useDeleteLabelMutation,
-  useEditLabelMutation,
-  useLabelsQuery,
-} from "generated/graphql";
+import { useCreateLabelMutation, useDeleteLabelMutation, useEditLabelMutation, useLabelsQuery } from "@keeply/api";
 import { shortVariant } from "libs/animation";
 import { useModal } from "libs/contexts/ModalContext";
 import { ellipsis } from "libs/utils/ellipsis";

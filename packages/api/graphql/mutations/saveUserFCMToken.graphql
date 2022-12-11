@@ -1,0 +1,3 @@
+mutation SaveUserFCMToken($token: String!, $timestamp: String!) {
+  saveUserFCMToken(token: $token, timestamp: $timestamp)
+}

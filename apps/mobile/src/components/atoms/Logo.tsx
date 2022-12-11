@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <Image
       className="w-36 h-8"
-      source={require("../../../assets/logo.png")}
+      source={require("../../../assets/logo.svg")}
     />
   );
 };

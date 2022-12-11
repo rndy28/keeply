@@ -1,0 +1,3 @@
+mutation RestoreNoteFromTrash($noteId: Float!) {
+  restoreNoteFromTrash(noteId: $noteId)
+}

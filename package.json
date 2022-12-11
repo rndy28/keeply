@@ -21,7 +21,8 @@
     "db:nuke": "docker compose down --volumes --remove-orphans"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "repository": "https://github.com/rndy28/keeply",
   "author": "rndy28 <rendyramadhan838@gmail.com>",
@@ -38,8 +39,6 @@
     "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.1",
-    "graphql": "15.7.2",
-    "graphql-ws": "^5.10.1",
     "prettier": "^2.7.1"
   }
 }

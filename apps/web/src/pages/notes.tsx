@@ -2,7 +2,7 @@ import Layout from "components/templates/Layout";
 import Archived from "components/UI/organism/list/Archived";
 import NoteList from "components/UI/organism/list/Notes";
 
-import { useNotesQuery, useReminderSubscription } from "generated/graphql";
+import { useNotesQuery, useReminderSubscription } from "@keeply/api";
 import { useModal } from "libs/contexts/ModalContext";
 import type { INote } from "libs/types";
 import { useEffect } from "react";

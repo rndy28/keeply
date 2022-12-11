@@ -1,4 +1,4 @@
-import { useMeQuery } from "generated/graphql";
+import { useMeQuery } from "@keeply/api";
 import { Navigate, Outlet } from "react-router-dom";
 
 export const PublicRoute = () => {
