@@ -1,7 +1,7 @@
 {
   "name": "keeply",
   "version": "1.0.0",
-  "private": "true",
+  "private": true,
   "scripts": {
     "server:build": "yarn workspace @keeply/server build",
     "server:dev": "yarn workspace @keeply/server dev",

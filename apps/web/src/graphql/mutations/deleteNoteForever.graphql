@@ -1,3 +1,0 @@
-mutation DeleteNoteForever($noteId: Float!) {
-  deleteNoteForever(noteId: $noteId)
-}

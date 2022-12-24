@@ -1,5 +1,0 @@
-query Notes {
-  notes {
-    ...NoteInput
-  }
-}

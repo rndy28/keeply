@@ -1,5 +1,0 @@
-mutation EditNote($noteId: Float!, $noteInput: NoteInput!, $labelId: [LabelId!]) {
-  editNote(noteId: $noteId, noteInput: $noteInput, labelId: $labelId) {
-    ...NoteInput
-  }
-}

@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      "manjari-thin": "ManjariThin",
+      "manjari-regular": "ManjariRegular",
+      "manjari-bold": "ManjariBold",
+    },
     screens: {
       sm: "640px",
       md: "768px",

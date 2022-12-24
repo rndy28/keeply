@@ -1,30 +1,33 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import type {} from "@react-navigation/native";
+import { SafeAreaView, View } from "react-native";
 import Button from "../components/atoms/Button";
 import Input from "../components/atoms/Input";
-import Logo from "../components/atoms/Logo";
+import Text from "../components/atoms/Text";
+import type { RootStackParamList } from "../types";
 
-interface Props {
-  navigation: any;
-}
-
-const Signup = ({ navigation }: Props) => {
+const Signup = ({ navigation }: NativeStackScreenProps<RootStackParamList, "Signup">) => {
   return (
     <SafeAreaView>
       <View className="bg-white h-full">
-        <View className="min-h-screen flex justify-center text-start w-[90%] mx-auto">
-          <Text className="text-2xl text-polarNight1">
-            signup to <Logo />
+        <View className="min-h-screen flex justify-center w-[90%] mx-auto">
+          <Text className="text-frost2 text-center p-1" variant="h1">
+            Hi There!
           </Text>
+          <Text className="text-center">Lets get your account setup!</Text>
           <View className="w-full my-6">
-            <Input label="Email" />
-            <Input label="Username" containerClassName="mt-3" />
-            <Input label="Password" containerClassName="mt-3" secureTextEntry />
+            <Input label="Username" />
+            <Input label="Email" containerClassName="mt-3" />
+            <Input label="Password" containerClassName="my-3" secureTextEntry />
+            <Text className="text-right text-sm underline" onPress={() => navigation.navigate("ForgotPassword")}>
+              forgot password?
+            </Text>
             <Button className="my-4">Signup</Button>
-            <Text className="text-polarNight3 text-sm">
-              By signing in, you agree to goodiebook&apos;s Terms of Service and
-              Privacy Policy
+            <Text className="text-polarNight3 text-sm text-center">
+              Already have an account?{" "}
+              <Text className="underline font-manjari-bold text-sm" onPress={() => navigation.navigate("Signin")}>
+                Sign In
+              </Text>
             </Text>
           </View>
         </View>

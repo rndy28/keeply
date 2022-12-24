@@ -1,5 +1,0 @@
-mutation CreateLabel($name: String!) {
-  createLabel(name: $name) {
-    ...RegularLabel
-  }
-}

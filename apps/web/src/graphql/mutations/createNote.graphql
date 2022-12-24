@@ -1,5 +1,0 @@
-mutation CreateNote($noteInput: NoteInput!, $labelId: [LabelId!]) {
-  createNote(noteInput: $noteInput, labelId: $labelId) {
-    ...NoteInput
-  }
-}
