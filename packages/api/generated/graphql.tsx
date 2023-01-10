@@ -28,7 +28,7 @@ export type Label = {
   name: Scalars['String'];
 };
 
-export type LabelId = {
+export type LabelArg = {
   id: Scalars['Int'];
 };
 
@@ -65,7 +65,7 @@ export type MutationCreateLabelArgs = {
 
 
 export type MutationCreateNoteArgs = {
-  labelId?: InputMaybe<Array<LabelId>>;
+  labels?: InputMaybe<Array<LabelArg>>;
   noteInput: NoteInput;
 };
 
@@ -87,7 +87,7 @@ export type MutationEditLabelArgs = {
 
 
 export type MutationEditNoteArgs = {
-  labelId?: InputMaybe<Array<LabelId>>;
+  labels?: InputMaybe<Array<LabelArg>>;
   noteId: Scalars['Float'];
   noteInput: NoteInput;
 };
@@ -221,7 +221,7 @@ export type CreateLabelMutation = { __typename?: 'Mutation', createLabel: { __ty
 
 export type CreateNoteMutationVariables = Exact<{
   noteInput: NoteInput;
-  labelId?: InputMaybe<Array<LabelId> | LabelId>;
+  labels?: InputMaybe<Array<LabelArg> | LabelArg>;
 }>;
 
 
@@ -252,7 +252,7 @@ export type EditLabelMutation = { __typename?: 'Mutation', editLabel: { __typena
 export type EditNoteMutationVariables = Exact<{
   noteId: Scalars['Float'];
   noteInput: NoteInput;
-  labelId?: InputMaybe<Array<LabelId> | LabelId>;
+  labels?: InputMaybe<Array<LabelArg> | LabelArg>;
 }>;
 
 
@@ -416,8 +416,8 @@ export function useCreateLabelMutation() {
   return Urql.useMutation<CreateLabelMutation, CreateLabelMutationVariables>(CreateLabelDocument);
 };
 export const CreateNoteDocument = gql`
-    mutation CreateNote($noteInput: NoteInput!, $labelId: [LabelId!]) {
-  createNote(noteInput: $noteInput, labelId: $labelId) {
+    mutation CreateNote($noteInput: NoteInput!, $labels: [LabelArg!]) {
+  createNote(noteInput: $noteInput, labels: $labels) {
     ...NoteInput
   }
 }
@@ -456,8 +456,8 @@ export function useEditLabelMutation() {
   return Urql.useMutation<EditLabelMutation, EditLabelMutationVariables>(EditLabelDocument);
 };
 export const EditNoteDocument = gql`
-    mutation EditNote($noteId: Float!, $noteInput: NoteInput!, $labelId: [LabelId!]) {
-  editNote(noteId: $noteId, noteInput: $noteInput, labelId: $labelId) {
+    mutation EditNote($noteId: Float!, $noteInput: NoteInput!, $labels: [LabelArg!]) {
+  editNote(noteId: $noteId, noteInput: $noteInput, labels: $labels) {
     ...NoteInput
   }
 }

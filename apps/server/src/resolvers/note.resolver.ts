@@ -43,7 +43,7 @@ export class NoteInput {
 }
 
 @InputType()
-export class LabelId {
+export class LabelArg {
   @Field(() => Int)
   id!: number;
 }
@@ -66,9 +66,9 @@ export class NoteResolver {
   @UseMiddleware(isAuth)
   async createNote(
     @Arg("noteInput") noteInput: NoteInput,
-    @Arg("labelId", () => [LabelId], { nullable: true }) labelId: LabelId[],
+    @Arg("labels", () => [LabelArg], { nullable: true }) labels: LabelArg[],
     @PubSub("NOTIFICATIONS") publish: Publisher<NotificationPayload>,
-    @Ctx() { prisma, req, agenda }: Context,
+    @Ctx() { prisma, req, agenda }: Context
   ): Promise<Note> {
     const userId = req.session.userId!;
     const note = await prisma.note.create({
@@ -76,10 +76,20 @@ export class NoteResolver {
         ...noteInput,
         userId,
         labels: {
-          connect: labelId,
+          connect: labels.map((label) => ({ id: label.id })),
         },
       },
-      include: {
+      select: {
+        id: true,
+        title: true,
+        text: true,
+        indexColor: true,
+        pinned: true,
+        time: true,
+        trashed: true,
+        archived: true,
+        createdAt: true,
+        updatedAt: true,
         labels: true,
       },
     });
@@ -107,8 +117,8 @@ export class NoteResolver {
   async editNote(
     @Arg("noteId") noteId: number,
     @Arg("noteInput") noteInput: NoteInput,
-    @Arg("labelId", () => [LabelId], { nullable: true }) labelId: LabelId[],
-    @Ctx() { prisma }: Context,
+    @Arg("labels", () => [LabelArg], { nullable: true, defaultValue: [] }) labels: LabelArg[],
+    @Ctx() { prisma }: Context
   ) {
     const note = await prisma.note.update({
       where: {
@@ -117,7 +127,7 @@ export class NoteResolver {
       data: {
         ...noteInput,
         labels: {
-          connect: labelId,
+          connect: labels.map((label) => ({ id: label.id })),
         },
       },
       include: {
@@ -207,7 +217,7 @@ export class NoteResolver {
     await agenda.schedule(
       new Date(now + 7 * 24 * 60 * 60 * 1000),
       `delete note in 7 days:${req.session.userId!}-${noteId}`,
-      {},
+      {}
     );
 
     return true;
@@ -220,14 +230,24 @@ export class NoteResolver {
       where: {
         userId: req.session.userId!,
       },
+      select: {
+        id: true,
+        title: true,
+        text: true,
+        indexColor: true,
+        pinned: true,
+        time: true,
+        trashed: true,
+        archived: true,
+        createdAt: true,
+        updatedAt: true,
+        labels: true,
+      },
       orderBy: [
         {
           createdAt: "desc",
         },
       ],
-      include: {
-        labels: true,
-      },
     });
 
     return notes;

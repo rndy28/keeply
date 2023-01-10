@@ -15,7 +15,7 @@ model user {
     password     String?
     picture      String?
     isFromGoogle Boolean?
-    note         note[]
+    notes        note[]
     label        label[]
 }
 
@@ -27,19 +27,18 @@ model note {
     pinned     Boolean  @default(false)
     indexColor Int?
     time       String?
-    labels     label[]
     trashed    Boolean  @default(false)
-    user       user     @relation(fields: [userId], references: [id])
-    userId     Int
     createdAt  DateTime @default(now())
     updatedAt  DateTime @updatedAt
+    user       user?    @relation(fields: [userId], references: [id])
+    userId     Int?
+    labels     label[]
 }
 
 model label {
     id     Int    @id @default(autoincrement())
     name   String
-    note   note?  @relation(fields: [noteId], references: [id])
-    noteId Int?
-    user   user   @relation(fields: [userId], references: [id])
-    userId Int
+    user   user?  @relation(fields: [userId], references: [id])
+    userId Int?
+    notes  note[]
 }

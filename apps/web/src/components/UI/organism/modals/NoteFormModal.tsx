@@ -147,21 +147,21 @@ const NoteFormModal = (data: NoteWithLabelsIncluded) => {
 
     const { labels, ...rest } = note;
 
-    const labelId = labels.map(({ id }) => ({ id: +id }));
+    const labelsId = labels.map(({ id }) => ({ id: +id }));
 
     if ("id" in rest) {
       const { id, updatedAt, ...noteInput } = rest;
       const { data } = await editNote({
         noteId: +id,
         noteInput: { ...noteInput },
-        labelId,
+        labels: labelsId,
       });
 
       if (typeof data !== "undefined") {
         onModalClose();
       }
     } else {
-      const { data } = await createNote({ noteInput: rest, labelId });
+      const { data } = await createNote({ noteInput: rest, labels: labelsId });
 
       if (typeof data !== "undefined") {
         onModalClose();
@@ -188,7 +188,7 @@ const NoteFormModal = (data: NoteWithLabelsIncluded) => {
       setNote((prev) =>
         keyName === "archived"
           ? { ...prev, [keyName]: !prev[keyName], pinned: false }
-          : { ...prev, [keyName]: !prev[keyName], archived: false },
+          : { ...prev, [keyName]: !prev[keyName], archived: false }
       );
     };
   };
