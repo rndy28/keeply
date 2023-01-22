@@ -113,7 +113,7 @@ function getInitialTime() {
     case "Morning":
       initialTime = "12:00 PM";
       break;
-    case "Noon":
+    case "Evening":
       initialTime = "6:00 PM";
       break;
     case "Evening":
