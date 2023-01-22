@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const Routes = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Notes"
+      initialRouteName="Signin"
       screenOptions={{
         headerStyle: {
           backgroundColor: "#fff",

@@ -11,6 +11,7 @@
   },
   "repository": "https://github.com/rndy28/keeply/tree/master/apps/mobile",
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@keeply/api": "*",
     "@react-native-async-storage/async-storage": "^1.17.10",
     "@react-native-community/netinfo": "9.3.0",
@@ -55,6 +56,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "postcss": "^8.4.14",
+    "react-native-svg-transformer": "^1.0.0",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3"
   },
