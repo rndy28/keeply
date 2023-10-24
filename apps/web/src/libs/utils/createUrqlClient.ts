@@ -133,7 +133,7 @@ export const client = createClient({
               { query: NotesDocument },
               _result,
               (result, query) => {
-                return { notes: [...query.notes, result.createNote] };
+                return { notes: [result.createNote,...query.notes] };
               },
             );
           },
